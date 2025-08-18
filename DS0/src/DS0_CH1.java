@@ -1,21 +1,20 @@
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 public class DS0_CH1
 {
     public static int uniqueCount(int[] list)
     {
-            ArrayList<Integer> newList = new ArrayList<>();
-            for(int x = 0; x<list.length; x++)
+        int a = 1;
+        int count = 0;
+        int unique = 0;
+        for(int x = 1; x<a; x++)
+        {
+            if(list[x] == list[a])
             {
-                newList.add(x);
-
-
+                count++;
             }
+        }
 
-            for(int y = 0; y< list.length; y++)
-            {
-                if(newList.remove(list[y]))
-
-            }
+        if(count!=)
 
 
 
@@ -24,4 +23,4 @@ public class DS0_CH1
 
 
     }
-}*/
+}
