@@ -10,7 +10,7 @@ public class DS0_CH6
         for(int x = 0; x<listA.size(); x++)
         {
             diff = Math.abs(listA.get(x) - listB.get(x));
-            abs.set(x, diff);
+            abs.add(diff);
 
         }
 
