@@ -1,54 +1,51 @@
 import java.io.*;
 import java.util.*;
+
 public class DS1_CH1
 {
     public static int[] sumLines(String fileName)
     {
-        ArrayList<Integer> nums = new ArrayList<Integer>();
-        int sum = 0;
+        ArrayList<Integer> sums = new ArrayList<Integer>();
+
 
         try
         {
-            File fileref = new File("fileName");
-            Scanner keyboard = new Scanner(fileref);
-
-
-            while(keyboard.hasNextLine())
+            Scanner keyboard = new Scanner(new File(fileName));
+            while (keyboard.hasNextLine())
             {
-                Scanner fromText = new Scanner(keyboard.nextLine()).useDelimiter("[,]");
-                while (fromText.hasNextInt())
+                String line = keyboard.nextLine();
+
+
+                Scanner keyboard1 = new Scanner(line);
+                keyboard1.useDelimiter(",");
+
+                int sum = 0;
+                while (keyboard1.hasNextInt())
                 {
-                    sum +=fromText.nextInt();
-
+                    sum += keyboard1.nextInt();
                 }
-                nums.add(sum);
+                sums.add(sum);
+
+                keyboard1.close();
             }
-
-
         }
-
 
         catch (Exception e)
         {
             e.printStackTrace();
         }
 
-        int[] numArray = new int[nums.size()];
 
-        for(int x = 0; x<numArray.length; x++)
+        int[] result = new int[sums.size()];
+        for (int i = 0; i < sums.size(); i++)
         {
-            numArray[x] = nums.get(x);
+            result[i] = sums.get(i);
         }
-
-        return numArray;
-
-
-
-
-
-
-
-
-
+        return result;
     }
+
+
+
+
 }
+
