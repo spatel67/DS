@@ -4,12 +4,14 @@ import java.io.*;
 import java.time.*;
 public class AccessedOn
 {
+
+    //found information on w3schools
     public static void main(String[] args)
     {
         try
         {
             File fromFile = new File("AccessedOn.txt");
-            FileWriter fileWriter = new FileWriter(fromFile,false);
+            FileWriter fileWriter = new FileWriter(fromFile,true);
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
             Scanner keyboard = new Scanner(fromFile);
@@ -19,16 +21,12 @@ public class AccessedOn
             }
 
             LocalDateTime dT = LocalDateTime.now();
-            DateTimeFormatter dtform = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            DateTimeFormatter dtform = DateTimeFormatter.ofPattern(" dd-MM-yyyy HH:mm:ss");
             String formattedDate = dT.format(dtform);
-            printWriter.println(formattedDate + " " + LocalDate.now().getDayOfWeek().name());
+            printWriter.println(LocalDate.now().getDayOfWeek().name() + formattedDate + " CDT");
             fileWriter.close();
             printWriter.close();
 
-            while(keyboard.hasNextLine())
-            {
-                System.out.println(keyboard.nextLine());
-            }
 
         }
 
