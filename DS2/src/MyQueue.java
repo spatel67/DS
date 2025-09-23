@@ -1,23 +1,24 @@
 import java.util.ArrayList;
 
-public class MyStack<E> implements StackInterface<E>
+public class MyQueue<E> implements QueueInterface<E>
 {
-    ArrayList<E> sigma = new ArrayList<E>();
+    ArrayList<E> lala = new ArrayList<E>();
 
-   public void push(E o)
-   {
+    public void offer(E o)
+    {
+        int size = lala.size();
 
-       sigma.add(o);
+        lala.add(size,o);
 
 
 
-   }
+    }
 
-    public E peek()
+    public E element()
     {
 
 
-        if(sigma.size()== 0)
+        if(lala.size()== 0)
         {
             return null;
 
@@ -25,18 +26,18 @@ public class MyStack<E> implements StackInterface<E>
 
         else
         {
-           int lala = sigma.size()-1;
-           return sigma.get(lala);
+            int haha = 0;
+            return this.lala.get(haha);
         }
 
 
 
     }
 
-    public E pop()
+    public E poll()
     {
 
-        if(sigma.size()== 0)
+        if(lala.size()== 0)
         {
             return null;
 
@@ -44,7 +45,7 @@ public class MyStack<E> implements StackInterface<E>
 
         else
         {
-            E wow = sigma.remove(sigma.size()-1);
+            E wow = lala.remove(0);
             return wow;
         }
 
@@ -53,7 +54,7 @@ public class MyStack<E> implements StackInterface<E>
     public int size()
     {
 
-        int size = sigma.size();
+        int size = lala.size();
         return size;
 
     }
@@ -62,7 +63,7 @@ public class MyStack<E> implements StackInterface<E>
     public boolean isEmpty()
     {
 
-        if(sigma.size() == 0)
+        if(lala.size() == 0)
         {
             return true;
         }
@@ -79,13 +80,13 @@ public class MyStack<E> implements StackInterface<E>
     public void clear()
     {
 
-        sigma.clear();
+        lala.clear();
 
     }
 
     public String toString()
     {
-        return sigma.toString();
+        return lala.toString();
     }
 
 
