@@ -39,18 +39,20 @@ public class DS2_Printer_Queue
             }
 
 
-            for(int a = 0; a<=x; a++)
+
+            for(int a = 1; a<=x; a++)
             {
-                System.out.println("Time " + queue.element().getPrintStart() + "s: Job #" + a + " Recieved (" + queue.element().getPages()+ " pages)");
+                System.out.println("Time " + queue.element().getSubmissionTime() + "s: Job #" + a + " Recieved (" + queue.element().getPages()+ " pages)");
                 System.out.println("Time " + queue.element().getBufferingStart() + "s: Job #" + a + " Buffering Started");
-                System.out.println("Time " + queue.element().getBufferingEnd() + "s: Job #" + a + " Finished Buffering and Started Printing");
-                System.out.println("Time " + queue.poll().getPrintEnd() + "s: Job #" + a + " Finished Printing");
+                System.out.println("Time " + (queue.element().getBufferingStart() +3) + "s: Job #" + a + " Finished Buffering and Started Printing");
+                System.out.println("Time " + (queue.element().getBufferingStart() + 3+ (queue.poll().getPages()*5))  + "s: Job #" + a + " Finished Printing");
+                System.out.println("");
 
             }
 
-            System.out.println(" ");
-            System.out.println("Printing Simulations Compete.");
-            System.out.println(" ");
+
+            System.out.println("Printing Simulation Complete.");
+            System.out.println("");
             System.out.println("Total Print Jobs: " + x);
             System.out.println("Average Wait Time: ") ;
 
