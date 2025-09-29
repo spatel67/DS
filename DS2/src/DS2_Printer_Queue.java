@@ -8,8 +8,8 @@ public class DS2_Printer_Queue
 
         try
         {
-            System.out.println("Enter job file name:");
             Scanner lala = new Scanner(System.in);
+            System.out.println("Enter job file name:");
             File fromFile = new File(lala.next());
 
 
