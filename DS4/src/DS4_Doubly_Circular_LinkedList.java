@@ -12,23 +12,26 @@ public class DS4_Doubly_Circular_LinkedList<E> extends DS4_Doubly_Circular_Linke
     public DS4_Doubly_Circular_LinkedList_Node<E> getLastNode()
     {
 
+
     }
 
     public E getFirst()
     {
-        circ.get(0);
+        return circ.get(0);
 
     }
 
     public E getLast()
     {
-        circ.get(circ.size()-1);
+        return circ.get(circ.size()-1);
 
     }
 
     public E removeLast()
     {
+        E lala = circ.get(circ.size()-1);
         circ.remove(circ.get(circ.size()-1));
+        return lala;
 
     }
 
